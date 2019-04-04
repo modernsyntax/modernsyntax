@@ -1,0 +1,116 @@
+.hero {
+    /* background: #1de9b6; */
+    background: #303030;
+    min-height: 30vh;
+    text-align: center;
+    color: #FFF;
+    /* border-radius: 0px 0px 15px 15px; */
+    margin-bottom: -100px;
+  }
+  
+  .hero img {
+    padding-top: 5vh;
+    height: 15vh;
+  }
+  
+  .hero h1 {
+    padding-bottom: 20px;
+  }
+  
+  /* #portfolio {
+    margin-top: -100px !important;
+    padding-top: -100px !important;
+    top: -10vh;
+    position: absolute !important;
+  } */
+  
+  h2 {
+    color: #00bfa5;
+  }
+  
+  nav {
+    background: #1de9b6
+  }
+  
+  footer {
+    text-align: center;
+    background: #303030;
+    height: 15vh;
+    color: #FFF;
+    margin-bottom: 0;
+  }
+  
+  body {
+    height: 100%;
+  }
+  
+  .card {
+    border-radius: 10px !important;
+    border: 10px black;
+    /* background: rgb(243, 243, 243); */
+  }
+  
+  .card-action {
+    color: #00D0DF;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  } */
+  

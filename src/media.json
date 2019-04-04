@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Github",
+        "link": "https://github.com/xeroneon",
+        "image": "GitHub.png"
+    },
+    {
+        "name": "LinkedIn",
+        "link": "https://www.linkedin.com/in/andrew-vasquez-659062126/",
+        "image": "linkedin.png"
+    },
+    {
+        "name": "Facebook",
+        "link": "https://www.facebook.com/andrew.jirasek",
+        "image": "facebook.jpg"
+    },
+    {
+        "name": "Twitter",
+        "link": "https://twitter.com/xeroneon12",
+        "image": "twitter.png"
+    }
+]
