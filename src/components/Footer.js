@@ -7,7 +7,7 @@ const Footer = (props) => {
     return (
         <footer>
             {/* <p> */}
-                Jirasektek&#169; {today.getFullYear()}
+                ModernSyntax&#169; {today.getFullYear()}
                 <Contact />
             {/* </p> */}
         </footer>

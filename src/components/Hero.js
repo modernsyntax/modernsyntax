@@ -3,7 +3,8 @@ import React from "react";
 const Hero = (props) => {
     return (
         <div className="hero">
-            <img src="/images/logo.png" alt="logo"/>
+            {/* <h3>ModernSyntax</h3> */}
+            <img src="/images/modernsyntax.png" />
         </div>
     )
 }
