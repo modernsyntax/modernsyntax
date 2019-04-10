@@ -38,7 +38,7 @@ const styles = theme => ({
         color: "#118DCD",
         fontFamily: "montserrat",
         fontWeight: "bold",
-        fontSize: "30px"
+        fontSize: "25px"
     },
     cardContent: {
         height: "300px"
@@ -150,7 +150,7 @@ const PriceCard = (props) => {
                 <Grid container justify="space-between">
                 <Grid item >
             <Typography className={classes.price}>
-                $500
+                
             </Typography>
                 </Grid>
                 <Grid item >
