@@ -50,7 +50,7 @@ const PriceCard = (props) => {
     return (
         <>
         <Grid container spacing={40} className={classes.container}>
-        <Grid item xs sm={6} lg>
+        <Grid item xs={12} sm={6} lg={4}>
         <Card>
             <CardHeader title="Starter" />
             <Divider />
@@ -85,7 +85,7 @@ const PriceCard = (props) => {
         </Card>
         </Grid>
 
-        <Grid item xs sm={6} lg>
+        <Grid item xs={12} sm={6} lg={4}>
         <Card>
             <CardHeader title="Business" />
             <Divider />
@@ -120,7 +120,7 @@ const PriceCard = (props) => {
         </Card>
         </Grid>
 
-        <Grid item xs sm={6} lg>
+        <Grid item xs={12} sm={6} lg={4}>
         <Card>
             <CardHeader title="Business+" />
             <Divider />
