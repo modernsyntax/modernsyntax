@@ -9,6 +9,7 @@ import Fab from '@material-ui/core/Fab'
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Grid } from '@material-ui/core';
+import Hidden from '@material-ui/core/Hidden';
 
 const styles = {
   root: {
@@ -26,6 +27,11 @@ const styles = {
     maxWidth: "200px",
     marginLeft: "auto",
     marginRight: "auto"
+  },
+  logo: {
+    maxWidth: "70px",
+    marginLeft: "auto",
+    marginRight: "auto"
   }
 };
 
@@ -35,8 +41,16 @@ function Nav(props) {
     <div className={classes.root}>
       <AppBar position="static" color="#FFF" alignitems="center">
         <Toolbar justifyItems="center">
+            {/* <img src="/images/modernsyntax.png" className={classes.img} / > */}
+            <Hidden only={['sm', 'xs']}>
             <img src="/images/modernsyntax.png" className={classes.img} / >
+            </Hidden>
+            <Hidden only={['md', 'lg', 'xl']}>
+            <img src="/images/logo.png" className={classes.logo} / >
+            </Hidden>
+            <Hidden only={['sm', 'xs']}>
             <button className="main-button">Get Started</button>
+            </Hidden>
         </Toolbar>
       </AppBar>
     </div>
