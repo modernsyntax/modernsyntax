@@ -42,10 +42,10 @@ function Nav(props) {
       <AppBar position="static" color="#FFF" alignitems="center">
         <Toolbar justifyItems="center">
             {/* <img src="/images/modernsyntax.png" className={classes.img} / > */}
-            <Hidden only={['sm', 'xs']}>
+            <Hidden only={['sm', 'xs', 'md']}>
             <img src="/images/modernsyntax.png" className={classes.img} / >
             </Hidden>
-            <Hidden only={['md', 'lg', 'xl']}>
+            <Hidden only={['lg', 'xl']}>
             <img src="/images/logo.png" className={classes.logo} / >
             </Hidden>
             <Hidden only={['sm', 'xs']}>
