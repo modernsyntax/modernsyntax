@@ -1,5 +1,4 @@
 import React from "react";
-import Contact from "./Contact";
 
 const today = new Date()
 
@@ -8,7 +7,6 @@ const Footer = (props) => {
         <footer>
             {/* <p> */}
                 ModernSyntax&#169; {today.getFullYear()}
-                <Contact />
             {/* </p> */}
         </footer>
     )

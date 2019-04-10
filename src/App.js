@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-// import Nav from "./components/Nav";
+import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Portfolio from "./components/Portfolio";
-// import Contact from "./components/Contact";
-import About from "./components/About";
-import Tech from "./components/Tech";
-
+import PriceCard from "./components/PriceCard"
 
 import './App.css';
 
@@ -14,17 +9,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Nav /> */}
+        <Nav />
 
         <main>
-          <Hero />
-          <Portfolio />
-          {/* <Tech /> */}
-          {/* <About /> */}
-          {/* <Contact /> */}
+          <PriceCard />
         </main>
 
-        <Footer />
+        {/* <Footer /> */}
 
 
       </div>

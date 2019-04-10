@@ -1,47 +1,28 @@
-.hero {
-  /* background: #1de9b6; */
-  background: #cfd8dc ;
-  min-height: 30vh;
-  text-align: center;
-  color: #FFF;
-  /* border-radius: 0px 0px 15px 15px; */
-  margin-bottom: -100px;
-}
+@font-face {
+  font-family: "metropolis";
+  /* src: url("https://yoursite.com/css/fonts/CustomFont.eot"); */
+  /* src: url("https://yoursite.com/css/fonts/CustomFont.woff") format("woff"), */
+  src: url("/fonts/Metropolis-Regular.otf") format("opentype")
+  /* url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg"); */
+  }
 
-.hero img {
-  padding-top: 5vh;
-  height: 15vh;
-}
+  * {
+    font-family: "metropolis";
+    color: #656565;
+  }
 
-.hero h1 {
-  padding-bottom: 20px;
-}
+  main {
+    padding: 0 50px 0 50px;
+  }
 
-/* #portfolio {
-  margin-top: -100px !important;
-  padding-top: -100px !important;
-  top: -10vh;
-  position: absolute !important;
-} */
-
-h2 {
-  color: #00bfa5;
-}
-
-nav {
-  background: #1de9b6
-}
-
-footer {
-  text-align: center;
-  background: #303030;
-  height: 15vh;
-  color: #FFF;
-  margin-bottom: 0;
-}
-
-body {
-  height: 100%;
+.main-button {
+  background-color: #118DCD;
+  border: none;
+  padding: 10px;
+  color:#FFF;
+  font-family: "metropolis";
+  font-size: 16px;
+  border-radius: 30px;
 }
 
 
