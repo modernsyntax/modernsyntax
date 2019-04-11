@@ -1,18 +1,13 @@
 import React from "react";
 
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import Fab from '@material-ui/core/Fab';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 
@@ -49,148 +44,118 @@ const PriceCard = (props) => {
     const { classes } = props;
     return (
         <>
-        <Grid container spacing={40} className={classes.container}>
-        <Grid item xs={12} sm={6} lg={4}>
-        <Card>
-            <CardHeader title="Starter" />
-            <Divider />
-            <CardContent className={classes.cardContent}>
-            <List>
-                        <ListItem>
-                            Professional Responsive Site
+            <Grid container spacing={40} className={classes.container}>
+                <Grid item xs={12} sm={6} lg={4}>
+                    <Card>
+                        <CardHeader title="Starter" />
+                        <Divider />
+                        <CardContent className={classes.cardContent}>
+                            <List>
+                                <ListItem>
+                                    Professional Responsive Site
+                                </ListItem>
+                                <ListItem>
+                                    Home page & $100/page
+                                </ListItem>
+                                <ListItem>
+                                    HTML5, CSS3
+                            </ListItem>
+                                <ListItem>
+                                    Free Hosting
                         </ListItem>
-                        <ListItem>
-                            Home page & $100/page
-                        </ListItem>
-                        <ListItem>
-                            HTML5, CSS3
-                        </ListItem>
-                        <ListItem>
-                            Free Hosting
-                        </ListItem>
-                    </List>
-            </CardContent>
-            <CardActions>
-                <Grid container justify="space-between">
-                <Grid item >
-            <Typography className={classes.price}>
-                $500
-            </Typography>
+                            </List>
+                        </CardContent>
+                        <CardActions>
+                            <Grid container justify="space-between">
+                                <Grid item >
+                                    <Typography className={classes.price}>
+                                        $500
+                                    </Typography>
+                                </Grid>
+                                <Grid item >
+                                    <button className="main-button">Start</button>
+                                </Grid>
+                            </Grid>
+                        </CardActions>
+                    </Card>
                 </Grid>
-                <Grid item >
-            <button className="main-button">Start</button>
-                </Grid>
-                </Grid>
-            </CardActions>
-        </Card>
-        </Grid>
 
-        <Grid item xs={12} sm={6} lg={4}>
-        <Card>
-            <CardHeader title="Business" />
-            <Divider />
-            <CardContent className={classes.cardContent}>
-            <List>
-                        <ListItem>
-                            Professional Responsive Site
-                        </ListItem>
-                        <ListItem>
-                            10 Pages, Including Home Page
-                        </ListItem>
-                        <ListItem>
-                            HTML5, CSS3 / WordPress / Etc.
-                        </ListItem>
-                        <ListItem>
-                            Limited Site Support
-                        </ListItem>
-                    </List>
-            </CardContent>
-            <CardActions>
-                <Grid container justify="space-between">
-                <Grid item >
-            <Typography className={classes.price}>
-                $1000
-            </Typography>
+                <Grid item xs={12} sm={6} lg={4}>
+                    <Card>
+                        <CardHeader title="Business" />
+                        <Divider />
+                        <CardContent className={classes.cardContent}>
+                            <List>
+                                <ListItem>
+                                    Professional Responsive Site
+                                </ListItem>
+                                <ListItem>
+                                    10 Pages, Including Home Page
+                                </ListItem>
+                                <ListItem>
+                                    HTML5, CSS3 / WordPress / Etc.
+                                </ListItem>
+                                <ListItem>
+                                    Limited Site Support
+                                </ListItem>
+                            </List>
+                        </CardContent>
+                        <CardActions>
+                            <Grid container justify="space-between">
+                                <Grid item >
+                                    <Typography className={classes.price}>
+                                        $1000
+                                    </Typography>
+                                </Grid>
+                                <Grid item >
+                                    <button className="main-button">Start</button>
+                                </Grid>
+                            </Grid>
+                        </CardActions>
+                    </Card>
                 </Grid>
-                <Grid item >
-            <button className="main-button">Start</button>
-                </Grid>
-                </Grid>
-            </CardActions>
-        </Card>
-        </Grid>
 
-        <Grid item xs={12} sm={6} lg={4}>
-        <Card>
-            <CardHeader title="Business+" />
-            <Divider />
-            <CardContent className={classes.cardContent}>
-            <List>
-                        <ListItem>
-                            Professional Responsive Site
-                        </ListItem>
-                        <ListItem>
-                            Fully Custom Site With Servers
-                        </ListItem>
-                        <ListItem>
-                            Choice Of Front End Framework
-                        </ListItem>
-                        <ListItem>
-                            Choice Of Back End Framework
-                        </ListItem>
-                        <ListItem>
-                            Choice Of Database
-                        </ListItem>
-                        <ListItem>
-                            Continued Site Support
-                        </ListItem>
-                    </List>
-            </CardContent>
-            <CardActions>
-                <Grid container justify="space-between">
-                <Grid item >
-            <Typography className={classes.price}>
-                
-            </Typography>
-                </Grid>
-                <Grid item >
-            <button className="main-button">Start</button>
-                </Grid>
-                </Grid>
-            </CardActions>
-        </Card>
-        </Grid>
+                <Grid item xs={12} sm={6} lg={4}>
+                    <Card>
+                        <CardHeader title="Business+" />
+                        <Divider />
+                        <CardContent className={classes.cardContent}>
+                            <List>
+                                <ListItem>
+                                    Professional Responsive Site
+                                </ListItem>
+                                <ListItem>
+                                    Fully Custom Site With Servers
+                                </ListItem>
+                                <ListItem>
+                                    Choice Of Front End Framework
+                                </ListItem>
+                                <ListItem>
+                                    Choice Of Back End Framework
+                                </ListItem>
+                                <ListItem>
+                                    Choice Of Database
+                                </ListItem>
+                                <ListItem>
+                                    Continued Site Support
+                                </ListItem>
+                            </List>
+                        </CardContent>
+                        <CardActions>
+                            <Grid container justify="space-between">
+                                <Grid item >
+                                    <Typography className={classes.price}>
 
-            {/* <Grid item xs>
-                <Paper>
-                    <Typography className={classes.mont}>
-                    Starter
-                    </Typography>
-                    <Divider />
-                    <List>
-                        <ListItem>
-                            Professional Responsive Site
-                        </ListItem>
-                        <ListItem>
-                            Home page & $100/page
-                        </ListItem>
-                        <ListItem>
-                            HTML5, CSS3
-                        </ListItem>
-                    </List>
-                </Paper>
+                                    </Typography>
+                                </Grid>
+                                <Grid item >
+                                    <button className="main-button">Start</button>
+                                </Grid>
+                            </Grid>
+                        </CardActions>
+                    </Card>
+                </Grid>
             </Grid>
-            <Grid item xs>
-                <Paper>
-                    something 
-                </Paper>
-            </Grid>
-            <Grid item xs>
-                <Paper>
-                    something 
-                </Paper>
-            </Grid> */}
-        </Grid>
         </>
     )
 }

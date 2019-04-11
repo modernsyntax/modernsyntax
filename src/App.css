@@ -25,6 +25,22 @@
   border-radius: 30px;
 }
 
+.main-button:hover {
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  line-height: 100px;
+  height: 100px;
+  margin-top: 100px;
+
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+
 
 
 
