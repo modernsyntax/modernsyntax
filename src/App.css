@@ -47,6 +47,7 @@ footer {
   line-height: 100px;
   height: 100px;
   margin-top: 100px;
+  font-weight: bold;
 
   -moz-box-shadow:    3px 3px 5px 6px #ccc;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
