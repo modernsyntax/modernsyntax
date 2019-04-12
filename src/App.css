@@ -20,7 +20,7 @@
     width: 100vw;
     background-color: #118DCD;
     -webkit-clip-path: polygon(100% 0, 100% 24%, 0 100%, 0 55%, 68% 0);
-    clip-path: polygon(100% 0, 100% 24%, 0 100%, 0 55%, 68% 0);
+    clip-path: polygon(100% 0, 100% 24%, 0 90%, 0 60%, 90% 0);
   }
 
   .clip2 {
@@ -31,8 +31,8 @@
     height: 100vh;
     width: 100vw;
     background-color: #15B3FF;
-    -webkit-clip-path: polygon(11% 0, 49% 0, 100% 50%, 100% 89%);
-    clip-path: polygon(11% 0, 49% 0, 100% 50%, 100% 89%);
+    -webkit-clip-path: polygon(10% 0, 50% 0, 100% 50%, 100% 90%);
+    clip-path: polygon(10% 0, 40% 0, 100% 50%, 100% 80%);
   }
 
   main {
