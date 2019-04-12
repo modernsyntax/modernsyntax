@@ -47,7 +47,7 @@ const Team = (props) => {
                                 <Typography variant="title">Andrew Vasquez</Typography>
                                 <Typography variant="subtitle">Director of Web Services</Typography>
                             </Grid>
-                            <Grid item xs={12} md={8}>
+                            <Grid item xs={12} md={8} alignItems="center">
                                 <Typography variant="paragraph" align="left">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</Typography>
                             </Grid>
                         </Grid>

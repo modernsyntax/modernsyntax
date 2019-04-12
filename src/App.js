@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-
+        <div className="clip">&nbsp;</div>
         <main>
           <PriceCard />
           <Portfolio />

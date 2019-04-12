@@ -20,6 +20,10 @@ const styles = theme => ({
     },
     cardContent: {
         height: "150px"
+    },
+    portImg: {
+        width: "100%",
+        marginTop: "30px;"
     }
 })
 
@@ -37,16 +41,23 @@ const Portfolio = (props) => {
                     <Card>
                     <CardHeader title="Brown Sales Inc" />
                         <CardContent className={classes.cardContent}>
-                            <Typography variant="paragraph">
-                            We created a stunning site for this Arizona local business. They deal in
-                            multi-family flooring
-                            installations.
-                            </Typography>
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <Typography variant="paragraph">
+                                    We created a stunning site for this Arizona local business. They deal in
+                                    multi-family flooring
+                                    installations.
+                                    </Typography>
+                                </Grid>
+                            </Grid>
                         </CardContent>
                         <CardActions>
-                            <Grid container justify="flex-end">
+                            <Grid container justify="space-between" alignItems="flex-end">
+                                <Grid item xs={6}>
+                                    <img alt="Brown Sales Inc" src="images/brown-sales-logo.png" className={classes.portImg}/>
+                                </Grid>
                                 <Grid item >
-                                    <Button variant="outlined">Visit</Button>
+                                    <Button href="https://brownsalesflooring.com" target="_blank" variant="outlined">Visit</Button>
                                 </Grid>
                             </Grid>
                         </CardActions>
