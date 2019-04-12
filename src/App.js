@@ -13,6 +13,7 @@ class App extends Component {
       <div className="App">
         <Nav />
         <div className="clip">&nbsp;</div>
+        <div className="clip2">&nbsp;</div>
         <main>
           <PriceCard />
           <Portfolio />
