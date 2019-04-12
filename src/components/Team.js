@@ -13,7 +13,8 @@ const styles = theme => ({
         color: "#656565"
     },
     container: {
-        marginTop: "50px;"
+        marginTop: "50px;",
+        color: "#656565"
     },
     cardContent: {
         height: "150px"

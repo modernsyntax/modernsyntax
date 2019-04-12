@@ -17,6 +17,9 @@ const styles = theme => ({
         flexGrow: 1,
         color: "#656565"
     },
+    container: {
+        color: "#656565"
+    },
     mont: {
         fontFamily: "Montserrat",
         fontWeight: "bold",

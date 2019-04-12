@@ -16,7 +16,8 @@ const styles = theme => ({
         color: "#656565"
     },
     container: {
-        marginTop: "50px;"
+        marginTop: "50px;",
+        color: "#656565"
     },
     cardContent: {
         height: "150px"
@@ -24,6 +25,10 @@ const styles = theme => ({
     portImg: {
         width: "100%",
         marginTop: "30px;"
+    },
+    button: {
+        color: "#118DCD",
+        fontWeight: "bold"
     }
 })
 
@@ -57,7 +62,7 @@ const Portfolio = (props) => {
                                     <img alt="Brown Sales Inc" src="images/brown-sales-logo.png" className={classes.portImg}/>
                                 </Grid>
                                 <Grid item >
-                                    <Button href="https://brownsalesflooring.com" target="_blank" variant="outlined">Visit</Button>
+                                    <Button href="https://brownsalesflooring.com" target="_blank" className={classes.button}>Visit</Button>
                                 </Grid>
                             </Grid>
                         </CardActions>
