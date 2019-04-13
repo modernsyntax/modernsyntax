@@ -13,7 +13,8 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
     root: {
         flexGrow: 1,
-        color: "#656565"
+        color: "#656565",
+        marginTop: "50px;",
     },
     container: {
         marginTop: "50px;",
@@ -36,7 +37,7 @@ const Portfolio = (props) => {
     const { classes } = props;
     return (
         <>
-            <Grid container spacing={40} className={classes.container}>
+            <Grid container spacing={8} className={classes.root}>
                 <Grid item xs={12}>
                     <Typography variant="headline" align="center">
                         Companies We Designed
@@ -48,7 +49,7 @@ const Portfolio = (props) => {
                         <CardContent className={classes.cardContent}>
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Typography variant="paragraph">
+                                    <Typography>
                                     We created a stunning site for this Arizona local business. They deal in
                                     multi-family flooring
                                     installations.

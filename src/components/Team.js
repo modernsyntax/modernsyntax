@@ -10,10 +10,10 @@ import Avatar from '@material-ui/core/Avatar';
 const styles = theme => ({
     root: {
         flexGrow: 1,
+        marginTop: "50px;",
         color: "#656565"
     },
     container: {
-        marginTop: "50px;",
         color: "#656565"
     },
     cardContent: {
@@ -34,7 +34,7 @@ const Team = (props) => {
     const { classes } = props;
     return (
         <>
-            <Grid container spacing={40} className={classes.container}>
+            <Grid container spacing={40} className={classes.root}>
             <Grid item xs={12}>
                     <Typography variant="headline" align="center">
                         Our Team
@@ -46,10 +46,10 @@ const Team = (props) => {
                             <Grid item xs={12} md={4}>
                                 <Avatar alt="Andrew Vasquez" src="/images/andrew.jpg" className={classes.avatar} />
                                 <Typography variant="title">Andrew Vasquez</Typography>
-                                <Typography variant="subtitle">Director of Web Services</Typography>
+                                <Typography variant="subtitle1">Director of Web Services</Typography>
                             </Grid>
-                            <Grid item xs={12} md={8} alignItems="center">
-                                <Typography variant="paragraph" align="left">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</Typography>
+                            <Grid item xs={12} md={8}>
+                                <Typography variant="body1" align="left">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</Typography>
                             </Grid>
                         </Grid>
                     </Paper>
@@ -61,10 +61,10 @@ const Team = (props) => {
                             <Grid item xs={12} md={4}>
                                 <Avatar alt="Andrew Vasquez" src="/images/brion.jpg" className={classes.avatar} />
                                 <Typography variant="title">Brion Lund</Typography>
-                                <Typography variant="subtitle">Director of Design</Typography>
+                                <Typography variant="subtitle1">Director of Design</Typography>
                             </Grid>
                             <Grid item xs={12} md={8}>
-                                <Typography variant="paragraph" align="left">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</Typography>
+                                <Typography variant="body1" align="left">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</Typography>
                             </Grid>
                         </Grid>
                     </Paper>
