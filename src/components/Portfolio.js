@@ -7,7 +7,10 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
+import CardMedia from '@material-ui/core/CardMedia';
+
 import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 
 
 const styles = theme => ({
@@ -25,11 +28,18 @@ const styles = theme => ({
     },
     portImg: {
         width: "100%",
-        marginTop: "30px;"
+        // marginTop: "30px;"
     },
     button: {
         color: "#118DCD",
         fontWeight: "bold"
+    },
+    headline: {
+        color: "#3B3B3B",
+        fontWeight: "bold"
+    },
+    media: {
+        height: "200px"
     }
 })
 
@@ -39,32 +49,23 @@ const Portfolio = (props) => {
         <>
             <Grid container spacing={8} className={classes.root}>
                 <Grid item xs={12}>
-                    <Typography variant="headline" align="center">
+                    <Typography variant="headline" align="center" className={classes.headline}>
                         Companies We Designed
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={3}>
                     <Card>
-                    <CardHeader title="Brown Sales Inc" />
-                        <CardContent className={classes.cardContent}>
-                            <Grid container>
-                                <Grid item xs={12}>
-                                    <Typography>
-                                    We created a stunning site for this Arizona local business. They deal in
-                                    multi-family flooring
-                                    installations.
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                        </CardContent>
+                        <CardMedia
+                            className={classes.media}
+                            image="/images/brownsales.jpg"
+                            title="Contemplative Reptile"
+                        />
                         <CardActions>
-                            <Grid container justify="space-between" alignItems="flex-end">
-                                <Grid item xs={6}>
-                                    <img alt="Brown Sales Inc" src="images/brown-sales-logo.png" className={classes.portImg}/>
+                            <Grid container justify="space-between" alignItems="center">
+                                <Grid item xs={8}>
+                                    <img alt="Brown Sales Inc" src="images/brown-sales-logo.png" className={classes.portImg} />
                                 </Grid>
-                                <Grid item >
                                     <Button href="https://brownsalesflooring.com" target="_blank" className={classes.button}>Visit</Button>
-                                </Grid>
                             </Grid>
                         </CardActions>
                     </Card>

@@ -49,7 +49,7 @@ const styles = theme => ({
         color: "#118DCD",
         fontFamily: "montserrat",
         fontWeight: "bold",
-        fontSize: "25px"
+        fontSize: "16px"
     },
     cardContent: {
         height: "300px"
@@ -80,29 +80,26 @@ const PriceCard = (props) => {
             <Grid container spacing={40} className={classes.root}>
                 <Grid item xs={12} sm={6} lg={4}>
                     <Card>
-                        <CardHeader title="Starter" />
+                        <CardHeader title="Small Business" />
                         <Divider />
                         <CardContent className={classes.cardContent}>
                             <List>
                                 <ListItem>
-                                    Professional Responsive Site
+                                    Graphic and Logo Design
                                 </ListItem>
                                 <ListItem>
-                                    Home page & $100/page
+                                    Static Web Pages
                                 </ListItem>
                                 <ListItem>
-                                    HTML5, CSS3
+                                    SEO
                             </ListItem>
-                                <ListItem>
-                                    Free Hosting
-                        </ListItem>
                             </List>
                         </CardContent>
                         <CardActions>
-                            <Grid container justify="space-between">
+                            <Grid container justify="space-between" alignItems="center">
                                 <Grid item >
                                     <Typography className={classes.price}>
-                                        $500
+                                        $800+
                                     </Typography>
                                 </Grid>
                                 <Grid item >
@@ -115,29 +112,32 @@ const PriceCard = (props) => {
 
                 <Grid item xs={12} sm={6} lg={4}>
                     <Card>
-                        <CardHeader title="Business" />
+                        <CardHeader title="Creative Professional" />
                         <Divider />
                         <CardContent className={classes.cardContent}>
                             <List>
                                 <ListItem>
-                                    Professional Responsive Site
+                                Graphic and Logo Design
                                 </ListItem>
                                 <ListItem>
-                                    10 Pages, Including Home Page
+                                Static Web Pages
                                 </ListItem>
                                 <ListItem>
-                                    HTML5, CSS3 / WordPress / Etc.
+                                SEO
                                 </ListItem>
                                 <ListItem>
-                                    Limited Site Support
+                                    Content Management System
+                                </ListItem>
+                                <ListItem>
+                                    Mobile Website
                                 </ListItem>
                             </List>
                         </CardContent>
                         <CardActions>
-                            <Grid container justify="space-between">
+                            <Grid container justify="space-between" alignItems="center">
                                 <Grid item >
                                     <Typography className={classes.price}>
-                                        $1000
+                                        $1200+
                                     </Typography>
                                 </Grid>
                                 <Grid item >
@@ -150,35 +150,35 @@ const PriceCard = (props) => {
 
                 <Grid item xs={12} sm={6} lg={4}>
                     <Card>
-                        <CardHeader title="Business+" />
+                        <CardHeader title="Enterprise" />
                         <Divider />
                         <CardContent className={classes.cardContent}>
                             <List>
-                                <ListItem>
-                                    Professional Responsive Site
+                            <ListItem>
+                                Graphic and Logo Design
                                 </ListItem>
                                 <ListItem>
-                                    Fully Custom Site With Servers
+                                Static Web Pages
                                 </ListItem>
                                 <ListItem>
-                                    Choice Of Front End Framework
+                                SEO
                                 </ListItem>
                                 <ListItem>
-                                    Choice Of Back End Framework
+                                    Content Management System
                                 </ListItem>
                                 <ListItem>
-                                    Choice Of Database
+                                    Mobile Website
                                 </ListItem>
                                 <ListItem>
-                                    Continued Site Support
+                                    Application Development
                                 </ListItem>
                             </List>
                         </CardContent>
                         <CardActions>
-                            <Grid container justify="space-between">
+                            <Grid container justify="space-between" alignItems="center">
                                 <Grid item >
                                     <Typography className={classes.price}>
-
+                                        Click Start to Get a Quote
                                     </Typography>
                                 </Grid>
                                 <Grid item >
@@ -207,9 +207,9 @@ const PriceCard = (props) => {
                                 onChange={e => setChoice(e.target.value)}
                                 color="primary"
                             >
-                                <FormControlLabel value="Starter" control={<Radio color="primary" /> } label="Starter" />
-                                <FormControlLabel value="Business" control={<Radio color="primary" />} label="Business" />
-                                <FormControlLabel value="Business+" control={<Radio color="primary" />} label="Business+" />
+                                <FormControlLabel value="Small Business" control={<Radio color="primary" /> } label="Small Business" />
+                                <FormControlLabel value="Creative Professional" control={<Radio color="primary" />} label="Creative Professional" />
+                                <FormControlLabel value="Enterprise" control={<Radio color="primary" />} label="Enterpirise" />
                             </RadioGroup>
                         </FormControl>
                     </DialogContent>

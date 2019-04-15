@@ -5,6 +5,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import Email from '@material-ui/icons/EmailOutlined';
 
 
 const styles = theme => ({
@@ -27,7 +29,24 @@ const styles = theme => ({
     paper: {
         padding: "10px",
         minHeight: "200px"
+    },
+    headline: {
+        color: "#3B3B3B",
+        fontWeight: "bold"
+    },
+    price: {
+        color: "#118DCD",
+        fontFamily: "montserrat",
+        fontWeight: "bold",
+        fontSize: "16px"
+    },
+    email: {
+        textAlign: "right"
+    },
+    button: {
+        fontWeight: "bold"
     }
+    
 })
 
 const Team = (props) => {
@@ -35,36 +54,38 @@ const Team = (props) => {
     return (
         <>
             <Grid container spacing={40} className={classes.root}>
-            <Grid item xs={12}>
-                    <Typography variant="headline" align="center">
+                <Grid item xs={12}>
+                    <Typography variant="headline" align="center" className={classes.headline}>
                         Our Team
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={2} align="center">
                     <Paper className={classes.paper}>
-                        <Grid container spacing={16} align="center">
-                            <Grid item xs={12} md={4}>
-                                <Avatar alt="Andrew Vasquez" src="/images/andrew.jpg" className={classes.avatar} />
-                                <Typography variant="title">Andrew Vasquez</Typography>
-                                <Typography variant="subtitle1">Director of Web Services</Typography>
+                        <Avatar alt="Andrew Vasquez" src="/images/andrew.jpg" className={classes.avatar} />
+                        <Typography variant="title">Andrew Vasquez</Typography>
+                        <Typography variant="subtitle1">Web Director</Typography>
+                        <Grid container justify="center" alignitems="flex-end">
+                            <Grid item xs>
+                                <Button color="primary" className={classes.button}>Portfolio</Button>
                             </Grid>
-                            <Grid item xs={12} md={8}>
-                                <Typography variant="body1" align="left">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</Typography>
+                            <Grid item xs>
+                            <Button color="primary" className={classes.email}><Email /></Button>
                             </Grid>
                         </Grid>
                     </Paper>
                 </Grid>
 
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={2} align="center">
                     <Paper className={classes.paper}>
-                        <Grid container spacing={16} align="center">
-                            <Grid item xs={12} md={4}>
-                                <Avatar alt="Andrew Vasquez" src="/images/brion.jpg" className={classes.avatar} />
-                                <Typography variant="title">Brion Lund</Typography>
-                                <Typography variant="subtitle1">Director of Design</Typography>
+                        <Avatar alt="Andrew Vasquez" src="/images/brion.jpg" className={classes.avatar} />
+                        <Typography variant="title">Brion Lund</Typography>
+                        <Typography variant="subtitle1">Design Director</Typography>
+                        <Grid container justify="center" alignitems="flex-end">
+                            <Grid item xs>
+                                <Button color="primary" className={classes.button}>Portfolio</Button>
                             </Grid>
-                            <Grid item xs={12} md={8}>
-                                <Typography variant="body1" align="left">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</Typography>
+                            <Grid item xs>
+                            <Button color="primary" className={classes.email}><Email /></Button>
                             </Grid>
                         </Grid>
                     </Paper>
