@@ -53,7 +53,7 @@ const Portfolio = (props) => {
                         Companies We Designed
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid item xs={12} md={2}>
                     <Card>
                         <CardMedia
                             className={classes.media}
