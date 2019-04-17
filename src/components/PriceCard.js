@@ -16,14 +16,8 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+import Snackbar from '@material-ui/core/Snackbar';
 
 const styles = theme => ({
     root: {
@@ -66,6 +60,8 @@ const PriceCard = (props) => {
     const [number, setNumber] = useState(undefined);
     const [company, setCompany] = useState(undefined);
     const [message, setMessage] = useState(undefined);
+    const [snackbar, setSnackbar] = useState(false);
+
 
     const webhook = "https://chat.googleapis.com/v1/spaces/AAAAbSt_Jtw/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=BeZhQ3ZEndx8y4p24r7EIZoLmuZ37I24PekfAkqb0vk%3D"
 
@@ -75,54 +71,58 @@ const PriceCard = (props) => {
         }
     }
 
-    const handleChoice = event => {
-        // this.setState({ value: event.target.value });
-        // setChoice(event.target.value)
-        console.log(event)
-    };
+    const handleSnackbar = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+          }
+      
+          setSnackbar(false);
+    }
 
     const sendForm = () => {
 
-        const body =     {
+        const body = {
             cards: [
-              {
-                sections: [
-                  {
-                    widgets: [
-                      {
-                        textParagraph: {
-                          text:`
+                {
+                    sections: [
+                        {
+                            widgets: [
+                                {
+                                    textParagraph: {
+                                        text: `
+<b>Package:</b> ${choice}
 <b>Name:</b> ${name}
 <b>Email:</b> ${email}
 <b>Number:</b> ${number}
 <b>Company:</b> ${company}
 <b>Message:</b> ${message}`
-                        }
-                      },
-                      {
-                          buttons: [
-                              {
-                                imageButton: {
-                                    icon: "EMAIL",
-                                    onClick: {
-                                      openLink: {
-                                        url: email
-                                      }
                                     }
+                                },
+                                {
+                                    buttons: [
+                                        {
+                                            imageButton: {
+                                                icon: "EMAIL",
+                                                onClick: {
+                                                    openLink: {
+                                                        url: email
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
                                 }
-                              }
-                          ]
-                      }
+                            ]
+                        }
                     ]
-                  }
-                ]
-              }
+                }
             ]
-          }
+        }
 
         axios.post(webhook, body)
             .then(res => {
                 setOpen(false)
+                setSnackbar(true);
             })
             .catch(err => console.log(err));
     }
@@ -156,7 +156,7 @@ const PriceCard = (props) => {
                                     </Typography>
                                 </Grid>
                                 <Grid item >
-                                    <button className="main-button" onClick={() => setOpen(true)}>Start</button>
+                                    <button className="main-button" onClick={() => {setOpen(true); setChoice("Small Business")}}>Start</button>
                                 </Grid>
                             </Grid>
                         </CardActions>
@@ -181,9 +181,6 @@ const PriceCard = (props) => {
                                 <ListItem>
                                     Content Management System
                                 </ListItem>
-                                <ListItem>
-                                    Mobile Website
-                                </ListItem>
                             </List>
                         </CardContent>
                         <CardActions>
@@ -194,7 +191,7 @@ const PriceCard = (props) => {
                                     </Typography>
                                 </Grid>
                                 <Grid item >
-                                    <button className="main-button" onClick={() => setOpen(true)}>Start</button>
+                                    <button className="main-button" onClick={() => {setOpen(true); setChoice("Creative Professional")}}>Start</button>
                                 </Grid>
                             </Grid>
                         </CardActions>
@@ -211,16 +208,13 @@ const PriceCard = (props) => {
                                     Graphic and Logo Design
                                 </ListItem>
                                 <ListItem>
-                                    Static Web Pages
+                                    Dynamic Web Pages
                                 </ListItem>
                                 <ListItem>
                                     SEO
                                 </ListItem>
                                 <ListItem>
                                     Content Management System
-                                </ListItem>
-                                <ListItem>
-                                    Mobile Website
                                 </ListItem>
                                 <ListItem>
                                     Application Development
@@ -235,14 +229,13 @@ const PriceCard = (props) => {
                                     </Typography>
                                 </Grid>
                                 <Grid item >
-                                    <button className="main-button" onClick={() => setOpen(true)}>Start</button>
+                                    <button className="main-button" onClick={() => {setOpen(true); setChoice("Enterprise")}}>Start</button>
                                 </Grid>
                             </Grid>
                         </CardActions>
                     </Card>
                 </Grid>
-
-                {/* <Grid item xs={12}> */}
+                
                 <Dialog
                     open={open}
                     onClose={() => handleClose()}
@@ -251,20 +244,6 @@ const PriceCard = (props) => {
                 >
                     <DialogTitle id="form-dialog-title">Get Started</DialogTitle>
                     <DialogContent>
-                        {/* <FormControl component="fieldset" className={classes.formControl}>
-                            <FormLabel component="legend" color="primary">Choose Package</FormLabel>
-                            <RadioGroup
-                                aria-label="Package"
-                                name="package1"
-                                value={null}
-                                onChange={e => setChoice(e.target.value)}
-                                color="primary"
-                            >
-                                <FormControlLabel value="Small Business" control={<Radio color="primary" /> } label="Small Business" />
-                                <FormControlLabel value="Creative Professional" control={<Radio color="primary" />} label="Creative Professional" />
-                                <FormControlLabel value="Enterprise" control={<Radio color="primary" />} label="Enterpirise" />
-                            </RadioGroup>
-                        </FormControl> */}
                         <form action="/" name="contact" method="POST" data-netlify="true">
                             <Grid container spacing={16}>
                                 <Grid item xs={12} sm={6}>
@@ -344,6 +323,21 @@ const PriceCard = (props) => {
                 {/* </Grid> */}
 
             </Grid>
+
+            <Snackbar
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+                open={snackbar}
+                autoHideDuration={6000}
+                onClose={e => handleSnackbar()}
+                ContentProps={{
+                    'aria-describedby': 'message-id',
+                }}
+                message={<span id="message-id">Message sent, You will be contacted shortly</span>}
+                
+            />
 
 
         </>

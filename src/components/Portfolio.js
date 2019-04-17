@@ -4,13 +4,10 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
 
 import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
 
 
 const styles = theme => ({
@@ -49,7 +46,7 @@ const Portfolio = (props) => {
         <>
             <Grid container spacing={8} className={classes.root}>
                 <Grid item xs={12}>
-                    <Typography variant="headline" align="center" className={classes.headline}>
+                    <Typography variant="h5" align="center" className={classes.headline}>
                         Companies We Designed
                     </Typography>
                 </Grid>

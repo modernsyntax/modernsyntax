@@ -4,7 +4,6 @@ import Footer from "./components/Footer";
 import PriceCard from "./components/PriceCard";
 import Portfolio from "./components/Portfolio";
 import Team from "./components/Team";
-import Grid from '@material-ui/core/Grid';
 
 import './App.css';
 
@@ -16,7 +15,10 @@ const theme = createMuiTheme({
       main: '#118DCD',
       contrastText: '#fff'
     },
-  }
+  },
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 class App extends Component {
@@ -24,9 +26,7 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
       <div className="App">
-        {/* <div className="clip2">&nbsp;</div> */}
         <Nav />
-        {/* <div className="clip">&nbsp;</div> */}
         <main>
           <PriceCard />
           <Portfolio />

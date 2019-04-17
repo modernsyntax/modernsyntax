@@ -55,14 +55,14 @@ const Team = (props) => {
         <>
             <Grid container spacing={40} className={classes.root}>
                 <Grid item xs={12}>
-                    <Typography variant="headline" align="center" className={classes.headline}>
+                    <Typography variant="h5" align="center" className={classes.headline}>
                         Our Team
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={2} align="center">
                     <Paper className={classes.paper}>
                         <Avatar alt="Andrew Vasquez" src="/images/andrew.jpg" className={classes.avatar} />
-                        <Typography variant="title">Andrew Vasquez</Typography>
+                        <Typography variant="h6">Andrew Vasquez</Typography>
                         <Typography variant="subtitle1">Web Director</Typography>
                         <Grid container justify="center" alignitems="flex-end">
                             <Grid item xs>
@@ -78,7 +78,7 @@ const Team = (props) => {
                 <Grid item xs={12} md={2} align="center">
                     <Paper className={classes.paper}>
                         <Avatar alt="Andrew Vasquez" src="/images/brion.jpg" className={classes.avatar} />
-                        <Typography variant="title">Brion Lund</Typography>
+                        <Typography variant="h6">Brion Lund</Typography>
                         <Typography variant="subtitle1">Design Director</Typography>
                         <Grid container justify="center" alignitems="flex-end">
                             <Grid item xs>
