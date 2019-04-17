@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -59,12 +60,14 @@ const PriceCard = (props) => {
     const { classes } = props;
 
     const [open, setOpen] = useState(false);
-    const [choice, setChoice] = useState(null);
-    const [name, setName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [number, setNumber] = useState(null);
-    const [company, setCompany] = useState(null);
-    const [message, setMessage] = useState(null);
+    const [choice, setChoice] = useState(undefined);
+    const [name, setName] = useState(undefined);
+    const [email, setEmail] = useState(undefined);
+    const [number, setNumber] = useState(undefined);
+    const [company, setCompany] = useState(undefined);
+    const [message, setMessage] = useState(undefined);
+
+    const webhook = "https://chat.googleapis.com/v1/spaces/AAAAbSt_Jtw/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=BeZhQ3ZEndx8y4p24r7EIZoLmuZ37I24PekfAkqb0vk%3D"
 
     const handleClose = () => {
         if (open) {
@@ -77,6 +80,23 @@ const PriceCard = (props) => {
         // setChoice(event.target.value)
         console.log(event)
     };
+
+    const sendForm= () => {
+
+        const message = {
+            text: `
+            *Name:* ${name}
+            *Email:* ${email}
+            *Number:* ${number}
+            *Company:* ${company}
+            *Message:* ${message}`
+        }
+        axios.post(webhook, message)
+        .then(res => {
+          setOpen(false)
+        })
+        .catch(err => console.log(err));
+    }
 
 
     return (
@@ -288,7 +308,7 @@ const PriceCard = (props) => {
                         <Button onClick={() => handleClose()} color="primary">
                             Cancel
             </Button>
-                        <Button type="submit" color="primary">
+                        <Button onClick={() => sendForm()} color="primary">
                             Submit
             </Button>
                     </DialogActions>
