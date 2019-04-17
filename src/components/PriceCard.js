@@ -81,9 +81,9 @@ const PriceCard = (props) => {
         console.log(event)
     };
 
-    const sendForm= () => {
+    const sendForm = () => {
 
-        const message = {
+        const body = {
             text: `
             *Name:* ${name}
             *Email:* ${email}
@@ -91,11 +91,11 @@ const PriceCard = (props) => {
             *Company:* ${company}
             *Message:* ${message}`
         }
-        axios.post(webhook, message)
-        .then(res => {
-          setOpen(false)
-        })
-        .catch(err => console.log(err));
+        axios.post(webhook, body)
+            .then(res => {
+                setOpen(false)
+            })
+            .catch(err => console.log(err));
     }
 
 
@@ -237,71 +237,70 @@ const PriceCard = (props) => {
                             </RadioGroup>
                         </FormControl> */}
                         <form action="/" name="contact" method="POST" data-netlify="true">
-                        <Grid container spacing={16}>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    id="outlined-name"
-                                    label="Name"
-                                    fullWidth
-                                    className={classes.textField}
-                                    value={name}
-                                    onChange={e => setName(e.target.value)}
-                                    margin="normal"
-                                    variant="outlined"
-                                />
+                            <Grid container spacing={16}>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        id="outlined-name"
+                                        label="Name"
+                                        fullWidth
+                                        className={classes.textField}
+                                        value={name}
+                                        onChange={e => setName(e.target.value)}
+                                        margin="normal"
+                                        variant="outlined"
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        id="outlined-name"
+                                        label="Email"
+                                        fullWidth
+                                        className={classes.textField}
+                                        value={email}
+                                        onChange={e => setEmail(e.target.value)}
+                                        margin="normal"
+                                        variant="outlined"
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        id="outlined-name"
+                                        label="Number"
+                                        fullWidth
+                                        className={classes.textField}
+                                        value={number}
+                                        onChange={e => setNumber(e.target.value)}
+                                        margin="normal"
+                                        variant="outlined"
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        id="outlined-name"
+                                        label="Business name"
+                                        fullWidth
+                                        className={classes.textField}
+                                        value={company}
+                                        onChange={e => setCompany(e.target.value)}
+                                        margin="normal"
+                                        variant="outlined"
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        id="outlined-multiline-static"
+                                        label="Additional Info"
+                                        multiline
+                                        fullWidth
+                                        rows="4"
+                                        defaultValue={message}
+                                        onChange={e => setMessage(e.target.value)}
+                                        className={classes.textField}
+                                        margin="normal"
+                                        variant="outlined"
+                                    />
+                                </Grid>
                             </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    id="outlined-name"
-                                    label="Email"
-                                    fullWidth
-                                    className={classes.textField}
-                                    value={email}
-                                    onChange={e => setEmail(e.target.value)}
-                                    margin="normal"
-                                    variant="outlined"
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    id="outlined-name"
-                                    label="Number"
-                                    fullWidth
-                                    className={classes.textField}
-                                    value={number}
-                                    onChange={e => setNumber(e.target.value)}
-                                    margin="normal"
-                                    variant="outlined"
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    id="outlined-name"
-                                    label="Business name"
-                                    fullWidth
-                                    className={classes.textField}
-                                    value={company}
-                                    onChange={e => setCompany(e.target.value)}
-                                    margin="normal"
-                                    variant="outlined"
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    id="outlined-multiline-static"
-                                    label="Additinal Info"
-                                    multiline
-                                    fullWidth
-                                    rows="4"
-                                    defaultValue={message}
-                                    onChange={e => setMessage(e.target.value)}
-                                    className={classes.textField}
-                                    margin="normal"
-                                    variant="outlined"
-
-                                />
-                            </Grid>
-                        </Grid>
                         </form>
                     </DialogContent>
                     <DialogActions>
