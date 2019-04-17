@@ -83,14 +83,43 @@ const PriceCard = (props) => {
 
     const sendForm = () => {
 
-        const body = {
-            text: `
-            *Name:* ${name}
-            *Email:* ${email}
-            *Number:* ${number}
-            *Company:* ${company}
-            *Message:* ${message}`
-        }
+        const body =     {
+            cards: [
+              {
+                sections: [
+                  {
+                    widgets: [
+                      {
+                        textParagraph: {
+                          text:`
+<b>Name:</b> ${name}
+<b>Email:</b> ${email}
+<b>Number:</b> ${number}
+<b>Company:</b> ${company}
+<b>Message:</b> ${message}`
+                        }
+                      },
+                      {
+                          buttons: [
+                              {
+                                imageButton: {
+                                    icon: "EMAIL",
+                                    onClick: {
+                                      openLink: {
+                                        url: email
+                                      }
+                                    }
+                                }
+                              }
+                          ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+
         axios.post(webhook, body)
             .then(res => {
                 setOpen(false)
