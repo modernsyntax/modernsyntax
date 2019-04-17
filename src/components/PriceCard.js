@@ -24,7 +24,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
-
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -61,6 +60,11 @@ const PriceCard = (props) => {
 
     const [open, setOpen] = useState(false);
     const [choice, setChoice] = useState(null);
+    const [name, setName] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [number, setNumber] = useState(null);
+    const [company, setCompany] = useState(null);
+    const [message, setMessage] = useState(null);
 
     const handleClose = () => {
         if (open) {
@@ -72,7 +76,7 @@ const PriceCard = (props) => {
         // this.setState({ value: event.target.value });
         // setChoice(event.target.value)
         console.log(event)
-      };
+    };
 
 
     return (
@@ -117,13 +121,13 @@ const PriceCard = (props) => {
                         <CardContent className={classes.cardContent}>
                             <List>
                                 <ListItem>
-                                Graphic and Logo Design
+                                    Graphic and Logo Design
                                 </ListItem>
                                 <ListItem>
-                                Static Web Pages
+                                    Static Web Pages
                                 </ListItem>
                                 <ListItem>
-                                SEO
+                                    SEO
                                 </ListItem>
                                 <ListItem>
                                     Content Management System
@@ -141,7 +145,7 @@ const PriceCard = (props) => {
                                     </Typography>
                                 </Grid>
                                 <Grid item >
-                                    <button className="main-button"  onClick={() => setOpen(true)}>Start</button>
+                                    <button className="main-button" onClick={() => setOpen(true)}>Start</button>
                                 </Grid>
                             </Grid>
                         </CardActions>
@@ -154,14 +158,14 @@ const PriceCard = (props) => {
                         <Divider />
                         <CardContent className={classes.cardContent}>
                             <List>
-                            <ListItem>
-                                Graphic and Logo Design
+                                <ListItem>
+                                    Graphic and Logo Design
                                 </ListItem>
                                 <ListItem>
-                                Static Web Pages
+                                    Static Web Pages
                                 </ListItem>
                                 <ListItem>
-                                SEO
+                                    SEO
                                 </ListItem>
                                 <ListItem>
                                     Content Management System
@@ -182,7 +186,7 @@ const PriceCard = (props) => {
                                     </Typography>
                                 </Grid>
                                 <Grid item >
-                                    <button className="main-button"  onClick={() => setOpen(true)}>Start</button>
+                                    <button className="main-button" onClick={() => setOpen(true)}>Start</button>
                                 </Grid>
                             </Grid>
                         </CardActions>
@@ -198,7 +202,7 @@ const PriceCard = (props) => {
                 >
                     <DialogTitle id="form-dialog-title">Get Started</DialogTitle>
                     <DialogContent>
-                        <FormControl component="fieldset" className={classes.formControl}>
+                        {/* <FormControl component="fieldset" className={classes.formControl}>
                             <FormLabel component="legend" color="primary">Choose Package</FormLabel>
                             <RadioGroup
                                 aria-label="Package"
@@ -211,13 +215,80 @@ const PriceCard = (props) => {
                                 <FormControlLabel value="Creative Professional" control={<Radio color="primary" />} label="Creative Professional" />
                                 <FormControlLabel value="Enterprise" control={<Radio color="primary" />} label="Enterpirise" />
                             </RadioGroup>
-                        </FormControl>
+                        </FormControl> */}
+                        <form action="/" name="contact" method="POST" data-netlify="true">
+                        <Grid container spacing={16}>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    id="outlined-name"
+                                    label="Name"
+                                    fullWidth
+                                    className={classes.textField}
+                                    value={name}
+                                    onChange={e => setName(e.target.value)}
+                                    margin="normal"
+                                    variant="outlined"
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    id="outlined-name"
+                                    label="Email"
+                                    fullWidth
+                                    className={classes.textField}
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                    margin="normal"
+                                    variant="outlined"
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    id="outlined-name"
+                                    label="Number"
+                                    fullWidth
+                                    className={classes.textField}
+                                    value={number}
+                                    onChange={e => setNumber(e.target.value)}
+                                    margin="normal"
+                                    variant="outlined"
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    id="outlined-name"
+                                    label="Business name"
+                                    fullWidth
+                                    className={classes.textField}
+                                    value={company}
+                                    onChange={e => setCompany(e.target.value)}
+                                    margin="normal"
+                                    variant="outlined"
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    id="outlined-multiline-static"
+                                    label="Additinal Info"
+                                    multiline
+                                    fullWidth
+                                    rows="4"
+                                    defaultValue={message}
+                                    onChange={e => setMessage(e.target.value)}
+                                    className={classes.textField}
+                                    margin="normal"
+                                    variant="outlined"
+
+                                />
+                            </Grid>
+                        </Grid>
+                        </form>
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={() => handleClose()} color="primary">
                             Cancel
             </Button>
-                        <Button onClick={() => handleClose()} color="primary">
+                        <Button type="submit" color="primary">
                             Submit
             </Button>
                     </DialogActions>
