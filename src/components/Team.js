@@ -59,7 +59,7 @@ const Team = (props) => {
                         Our Team
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={2} align="center">
+                <Grid item xs={12} sm={6} md={3} lg={2} align="center">
                     <Paper className={classes.paper}>
                         <Avatar alt="Andrew Vasquez" src="/images/andrew.jpg" className={classes.avatar} />
                         <Typography variant="h6">Andrew Vasquez</Typography>
@@ -75,7 +75,7 @@ const Team = (props) => {
                     </Paper>
                 </Grid>
 
-                <Grid item xs={12} md={2} align="center">
+                <Grid item xs={12} sm={6} md={3} lg={2} align="center">
                     <Paper className={classes.paper}>
                         <Avatar alt="Andrew Vasquez" src="/images/brion.jpg" className={classes.avatar} />
                         <Typography variant="h6">Brion Lund</Typography>
