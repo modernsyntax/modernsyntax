@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import ReactDOM from 'react-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -18,6 +19,10 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Snackbar from '@material-ui/core/Snackbar';
+import MaskedInput from 'react-text-mask';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 const styles = theme => ({
     root: {
@@ -50,17 +55,37 @@ const styles = theme => ({
     }
 })
 
+function TextMaskCustom(props) {
+    const { inputRef, ...other } = props;
+
+    return (
+        <MaskedInput
+            {...other}
+            ref={ref => {
+                inputRef(ref ? ref.inputElement : null);
+            }}
+            mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+            placeholderChar={'\u2000'}
+            // showMask
+            variant="outlined"
+        />
+    );
+}
+
 const PriceCard = (props) => {
     const { classes } = props;
 
     const [open, setOpen] = useState(false);
-    const [choice, setChoice] = useState(undefined);
-    const [name, setName] = useState(undefined);
-    const [email, setEmail] = useState(undefined);
-    const [number, setNumber] = useState(undefined);
-    const [company, setCompany] = useState(undefined);
-    const [message, setMessage] = useState(undefined);
+    const [choice, setChoice] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [company, setCompany] = useState("");
+    const [message, setMessage] = useState("");
     const [snackbar, setSnackbar] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState("");
+
+    const [textmask, setTextmask] = useState('(  )    -    ');
+
 
 
     const webhook = "https://chat.googleapis.com/v1/spaces/AAAAbSt_Jtw/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=BeZhQ3ZEndx8y4p24r7EIZoLmuZ37I24PekfAkqb0vk%3D"
@@ -74,12 +99,20 @@ const PriceCard = (props) => {
     const handleSnackbar = (event, reason) => {
         if (reason === 'clickaway') {
             return;
-          }
-      
-          setSnackbar(false);
+        }
+
+        setSnackbar(false);
     }
 
     const sendForm = () => {
+
+        const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+        if (email !== regexEmail) {
+            setSnackbarMessage("Email not valid");
+            setSnackbar(true);
+            return
+        }
 
         const body = {
             cards: [
@@ -91,11 +124,11 @@ const PriceCard = (props) => {
                                     textParagraph: {
                                         text: `
 <b>Package:</b> ${choice}
-<b>Name:</b> ${name}
-<b>Email:</b> ${email}
-<b>Number:</b> ${number}
-<b>Company:</b> ${company}
-<b>Message:</b> ${message}`
+<b>Name:</b> ${name.trim()}
+<b>Email:</b> ${email.trim()}
+<b>Number:</b> ${textmask}
+<b>Company:</b> ${company.trim()}
+<b>Message:</b> ${message.trim()}`
                                     }
                                 },
                                 {
@@ -121,7 +154,8 @@ const PriceCard = (props) => {
 
         axios.post(webhook, body)
             .then(res => {
-                setOpen(false)
+                setOpen(false);
+                setSnackbarMessage("We have recieved your message, You will be contacted shortly")
                 setSnackbar(true);
             })
             .catch(err => console.log(err));
@@ -156,7 +190,7 @@ const PriceCard = (props) => {
                                     </Typography>
                                 </Grid>
                                 <Grid item >
-                                    <button className="main-button" onClick={() => {setOpen(true); setChoice("Small Business")}}>Start</button>
+                                    <button className="main-button" onClick={() => { setOpen(true); setChoice("Small Business") }}>Start</button>
                                 </Grid>
                             </Grid>
                         </CardActions>
@@ -191,7 +225,7 @@ const PriceCard = (props) => {
                                     </Typography>
                                 </Grid>
                                 <Grid item >
-                                    <button className="main-button" onClick={() => {setOpen(true); setChoice("Creative Professional")}}>Start</button>
+                                    <button className="main-button" onClick={() => { setOpen(true); setChoice("Creative Professional") }}>Start</button>
                                 </Grid>
                             </Grid>
                         </CardActions>
@@ -229,13 +263,13 @@ const PriceCard = (props) => {
                                     </Typography>
                                 </Grid>
                                 <Grid item >
-                                    <button className="main-button" onClick={() => {setOpen(true); setChoice("Enterprise")}}>Start</button>
+                                    <button className="main-button" onClick={() => { setOpen(true); setChoice("Enterprise") }}>Start</button>
                                 </Grid>
                             </Grid>
                         </CardActions>
                     </Card>
                 </Grid>
-                
+
                 <Dialog
                     open={open}
                     onClose={() => handleClose()}
@@ -248,8 +282,9 @@ const PriceCard = (props) => {
                             <Grid container spacing={16}>
                                 <Grid item xs={12} sm={6}>
                                     <TextField
-                                        id="outlined-name"
+                                        id="name"
                                         label="Name"
+                                        autoFocus
                                         fullWidth
                                         className={classes.textField}
                                         value={name}
@@ -260,8 +295,9 @@ const PriceCard = (props) => {
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <TextField
-                                        id="outlined-name"
+                                        id="email"
                                         label="Email"
+                                        type="email"
                                         fullWidth
                                         className={classes.textField}
                                         value={email}
@@ -271,7 +307,7 @@ const PriceCard = (props) => {
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
-                                    <TextField
+                                    {/* <TextField
                                         id="outlined-name"
                                         label="Number"
                                         fullWidth
@@ -280,11 +316,30 @@ const PriceCard = (props) => {
                                         onChange={e => setNumber(e.target.value)}
                                         margin="normal"
                                         variant="outlined"
+                                    /> */}
+                                    <InputLabel
+                                        // ref={ref => {
+                                        //     props.labelRef = ReactDOM.findDOMNode(ref);
+                                        // }}
+                                        htmlFor="number"
+                                    >
+                                        &nbsp;
+                                    </InputLabel>
+                                    <OutlinedInput
+                                        id="number"
+                                        value={textmask}
+                                        placeholder={`Phone: (   )   -    `}
+                                        onChange={e => setTextmask(e.target.value)}
+                                        id="formatted-text-mask-input"
+                                        inputComponent={TextMaskCustom}
+                                        labelWidth={0}
+                                        fullWidth
+                                        notched
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <TextField
-                                        id="outlined-name"
+                                        id="business"
                                         label="Business name"
                                         fullWidth
                                         className={classes.textField}
@@ -296,7 +351,7 @@ const PriceCard = (props) => {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <TextField
-                                        id="outlined-multiline-static"
+                                        id="message"
                                         label="Additional Info"
                                         multiline
                                         fullWidth
@@ -335,8 +390,8 @@ const PriceCard = (props) => {
                 ContentProps={{
                     'aria-describedby': 'message-id',
                 }}
-                message={<span id="message-id">Message sent, You will be contacted shortly</span>}
-                
+                message={<span id="message-id">{snackbarMessage}</span>}
+
             />
 
 
