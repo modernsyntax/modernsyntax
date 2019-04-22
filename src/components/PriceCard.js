@@ -23,6 +23,7 @@ import MaskedInput from 'react-text-mask';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
+import Zoom from '@material-ui/core/Zoom';
 
 const styles = theme => ({
     root: {
@@ -166,6 +167,7 @@ const PriceCard = (props) => {
         <>
             <Grid container spacing={40} className={classes.root}>
                 <Grid item xs={12} sm={6} lg={4}>
+                <Zoom in={true}>
                     <Card>
                         <CardHeader title="Small Business" />
                         <Divider />
@@ -195,9 +197,11 @@ const PriceCard = (props) => {
                             </Grid>
                         </CardActions>
                     </Card>
+                    </Zoom>
                 </Grid>
 
                 <Grid item xs={12} sm={6} lg={4}>
+                <Zoom in={true} style={{ transitionDelay: '250ms' }}>
                     <Card>
                         <CardHeader title="Creative Professional" />
                         <Divider />
@@ -230,9 +234,11 @@ const PriceCard = (props) => {
                             </Grid>
                         </CardActions>
                     </Card>
+                    </Zoom>
                 </Grid>
 
                 <Grid item xs={12} sm={6} lg={4}>
+                <Zoom in={true} style={{ transitionDelay: '500ms' }}>
                     <Card>
                         <CardHeader title="Enterprise" />
                         <Divider />
@@ -268,6 +274,7 @@ const PriceCard = (props) => {
                             </Grid>
                         </CardActions>
                     </Card>
+                    </Zoom>
                 </Grid>
 
                 <Dialog
