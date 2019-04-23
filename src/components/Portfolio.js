@@ -24,7 +24,8 @@ const styles = theme => ({
         height: "150px"
     },
     portImg: {
-        width: "100%",
+        maxWidth: "100%",
+        maxHeight: "30px"
         // marginTop: "30px;"
     },
     button: {
@@ -44,7 +45,7 @@ const Portfolio = (props) => {
     const { classes } = props;
     return (
         <>
-            <Grid container spacing={8} className={classes.root}>
+            <Grid container spacing={40} className={classes.root}>
                 <Grid item xs={12}>
                     <Typography variant="h5" align="center" className={classes.headline}>
                         Companies We Designed
@@ -55,7 +56,7 @@ const Portfolio = (props) => {
                         <CardMedia
                             className={classes.media}
                             image="/images/brownsales.jpg"
-                            title="Contemplative Reptile"
+                            title="Brown Sales"
                         />
                         <CardActions>
                             <Grid container justify="space-between" alignItems="center">
@@ -63,6 +64,24 @@ const Portfolio = (props) => {
                                     <img alt="Brown Sales Inc" src="images/brown-sales-logo.png" className={classes.portImg} />
                                 </Grid>
                                     <Button href="https://brownsalesflooring.com" target="_blank" className={classes.button}>Visit</Button>
+                            </Grid>
+                        </CardActions>
+                    </Card>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={3} lg={2}>
+                    <Card>
+                        <CardMedia
+                            className={classes.media}
+                            image="/images/gid-background.jpg"
+                            title="Get It Done Management"
+                        />
+                        <CardActions>
+                            <Grid container justify="space-between" alignItems="center">
+                                <Grid item xs={8}>
+                                    <img alt="Get It Done Management" src="images/gid.png" className={classes.portImg}/>
+                                </Grid>
+                                    <Button href="https://gidmanagement.netlify.com/" target="_blank" className={classes.button}>Visit</Button>
                             </Grid>
                         </CardActions>
                     </Card>
