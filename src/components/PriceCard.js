@@ -187,8 +187,7 @@ const PriceCard = (props) => {
                         <CardActions>
                             <Grid container justify="space-between" alignItems="center">
                                 <Grid item >
-                                    <Typography className={classes.price}>
-                                        $800+
+                                    <Typography>
                                     </Typography>
                                 </Grid>
                                 <Grid item >
@@ -225,7 +224,6 @@ const PriceCard = (props) => {
                             <Grid container justify="space-between" alignItems="center">
                                 <Grid item >
                                     <Typography className={classes.price}>
-                                        $1200+
                                     </Typography>
                                 </Grid>
                                 <Grid item >
@@ -265,7 +263,6 @@ const PriceCard = (props) => {
                             <Grid container justify="space-between" alignItems="center">
                                 <Grid item >
                                     <Typography className={classes.price}>
-                                        Click Start to Get a Quote
                                     </Typography>
                                 </Grid>
                                 <Grid item >

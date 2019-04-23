@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Hidden from '@material-ui/core/Hidden';
+import Slide from '@material-ui/core/Slide';
 
 const styles = {
   root: {
@@ -37,10 +38,14 @@ function Nav(props) {
       <AppBar position="static" alignitems="center" className={classes.nav}>
         <Toolbar>
             <Hidden only={['sm', 'xs']}>
+            <Slide in={true} direction="down" timeout={250}>
             <img alt="modernsyntax" src="/images/modernsyntax.png" className={classes.img} / >
+            </Slide>
             </Hidden>
             <Hidden only={['lg', 'xl', "md"]}>
+            <Slide in={true} direction="down">
             <img alt="modernsyntax" src="/images/logo.png" className={classes.logo} / >
+            </Slide>
             </Hidden>
         </Toolbar>
       </AppBar>
