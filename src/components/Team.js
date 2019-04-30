@@ -66,10 +66,10 @@ const Team = (props) => {
                         <Typography variant="subtitle1">Web Director</Typography>
                         <Grid container justify="center" alignitems="flex-end">
                             <Grid item xs>
-                                <Button color="primary" className={classes.button}>Portfolio</Button>
+                                <Button href="https://www.fullstackandrew.com" color="primary" className={classes.button}>Portfolio</Button>
                             </Grid>
                             <Grid item xs>
-                            <Button color="primary" className={classes.email}><Email /></Button>
+                            <Button href="mailto:andrew@modernsyntax.io" color="primary" className={classes.email}><Email /></Button>
                             </Grid>
                         </Grid>
                     </Paper>
@@ -85,7 +85,7 @@ const Team = (props) => {
                                 <Button color="primary" className={classes.button}>Portfolio</Button>
                             </Grid>
                             <Grid item xs>
-                            <Button color="primary" className={classes.email}><Email /></Button>
+                            <Button href="mailto:brion@modernsyntax.io" color="primary" className={classes.email}><Email /></Button>
                             </Grid>
                         </Grid>
                     </Paper>
