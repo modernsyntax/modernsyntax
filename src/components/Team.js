@@ -1,5 +1,8 @@
 import React from "react";
 
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+
+
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -50,20 +53,54 @@ const styles = theme => ({
     },
     icon: {
         color: "#222"
+    },
+    label: {
+        minHeight: "236px",
+        textAlign: "center",
+        display: "flex",
+        alignItems: "center",
+        marginLeft: "-100px"
+    },
+    labelSmall: {
+        minHeight: "225px",
+        textAlign: "center",
+        display: "flex",
+        alignItems: "center"
     }
     
 })
 
 const Team = (props) => {
     const { classes } = props;
+    const sm = useMediaQuery('(min-width:600px)');
+
     return (
         <>
             <Grid container spacing={40} className={classes.root}>
-                <Grid item xs={12}>
-                    {/* <Typography variant="h5" align="center" className={classes.headline}>
+                {/* <Grid item xs={12}>
+                    <Typography variant="h5" align="center" className={classes.headline}>
                         Our Team
-                    </Typography> */}
+                    </Typography>
                     <People fontSize="large" className={classes.icon}/>
+                </Grid> */}
+                <Grid item xs={12} sm={6} md={3} lg={2}>
+                    {/* <Card className={classes.label}> */}
+                    <Paper className={sm ? classes.label : classes.labelSmall}>
+                        <Grid container alignItems="center" >
+                        <Grid item xs={sm ? 4 : 0}>
+                            &nbsp;
+                        </Grid>
+                            <Grid item xs={sm ? 8 : 12}>
+                    {/* <CardContent> */}
+                    <People fontSize="large" className={classes.icon}/>
+                                <Typography variant="h5" align="center" className={classes.headline}>
+                                    Our Team
+                                </Typography>
+                    {/* </CardContent> */}
+                            </Grid>
+                        </Grid>
+                        </Paper>
+                    {/* </Card> */}
                 </Grid>
                 <Grid item xs={12} sm={6} md={3} lg={2} align="center">
                     <Paper className={classes.paper}>
