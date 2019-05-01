@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import Email from '@material-ui/icons/EmailOutlined';
+import People from '@material-ui/icons/People';
+
 
 
 const styles = theme => ({
@@ -45,6 +47,9 @@ const styles = theme => ({
     },
     button: {
         fontWeight: "bold"
+    },
+    icon: {
+        color: "#222"
     }
     
 })
@@ -55,9 +60,10 @@ const Team = (props) => {
         <>
             <Grid container spacing={40} className={classes.root}>
                 <Grid item xs={12}>
-                    <Typography variant="h5" align="center" className={classes.headline}>
+                    {/* <Typography variant="h5" align="center" className={classes.headline}>
                         Our Team
-                    </Typography>
+                    </Typography> */}
+                    <People fontSize="large" className={classes.icon}/>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3} lg={2} align="center">
                     <Paper className={classes.paper}>

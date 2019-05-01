@@ -55,38 +55,6 @@ const PriceCard = (props) => {
     return (
         <>
             <Grid container spacing={40} className={classes.root}>
-                <Grid item xs={12} sm={6} lg={4}>
-                <Zoom in={true}>
-                    <Card>
-                        <CardHeader title="Small Business" />
-                        <Divider />
-                        <CardContent className={classes.cardContent}>
-                            <List>
-                                <ListItem>
-                                    Graphic and Logo Design
-                                </ListItem>
-                                <ListItem>
-                                    Static Web Pages
-                                </ListItem>
-                                <ListItem>
-                                    SEO
-                            </ListItem>
-                            </List>
-                        </CardContent>
-                        <CardActions>
-                            <Grid container justify="space-between" alignItems="center">
-                                <Grid item >
-                                    <Typography>
-                                    </Typography>
-                                </Grid>
-                                <Grid item >
-                                    <button className="main-button" onClick={() => { setOpen(true); setChoice("Small Business") }}>Start</button>
-                                </Grid>
-                            </Grid>
-                        </CardActions>
-                    </Card>
-                    </Zoom>
-                </Grid>
 
                 <Grid item xs={12} sm={6} lg={4}>
                 <Zoom in={true} style={{ transitionDelay: '250ms' }}>
@@ -96,10 +64,10 @@ const PriceCard = (props) => {
                         <CardContent className={classes.cardContent}>
                             <List>
                                 <ListItem>
-                                    Graphic and Logo Design
+                                    Optional Logo / Brand Design
                                 </ListItem>
                                 <ListItem>
-                                    Static Web Pages
+                                    Static Responsive Web Pages
                                 </ListItem>
                                 <ListItem>
                                     SEO
@@ -125,17 +93,20 @@ const PriceCard = (props) => {
                 </Grid>
 
                 <Grid item xs={12} sm={6} lg={4}>
-                <Zoom in={true} style={{ transitionDelay: '500ms' }}>
+                <Zoom in={true}>
                     <Card>
-                        <CardHeader title="Enterprise" />
+                        <CardHeader title="Small Business" />
                         <Divider />
                         <CardContent className={classes.cardContent}>
                             <List>
                                 <ListItem>
-                                    Graphic and Logo Design
+                                    Optional Brand Design / Implementation
                                 </ListItem>
                                 <ListItem>
-                                    Dynamic Web Pages
+                                    Letterhead / Business Card / Email Signature
+                                </ListItem>
+                                <ListItem>
+                                    Static Responsive Web Pages
                                 </ListItem>
                                 <ListItem>
                                     SEO
@@ -143,8 +114,44 @@ const PriceCard = (props) => {
                                 <ListItem>
                                     Content Management System
                                 </ListItem>
+                            </List>
+                        </CardContent>
+                        <CardActions>
+                            <Grid container justify="space-between" alignItems="center">
+                                <Grid item >
+                                    <Typography>
+                                    </Typography>
+                                </Grid>
+                                <Grid item >
+                                    <button className="main-button" onClick={() => { setOpen(true); setChoice("Small Business") }}>Start</button>
+                                </Grid>
+                            </Grid>
+                        </CardActions>
+                    </Card>
+                    </Zoom>
+                </Grid>
+
+                <Grid item xs={12} sm={6} lg={4}>
+                <Zoom in={true} style={{ transitionDelay: '500ms' }}>
+                    <Card>
+                        <CardHeader title="Enterprise" />
+                        <Divider />
+                        <CardContent className={classes.cardContent}>
+                            <List>
                                 <ListItem>
-                                    Application Development
+                                    Optional Brand Design / Implementation
+                                </ListItem>
+                                <ListItem>
+                                    Letterhead / Business Card / Email Signature
+                                </ListItem>
+                                <ListItem>
+                                    Full Site Development - Front End / Back End / Database
+                                </ListItem>
+                                <ListItem>
+                                    SEO
+                                </ListItem>
+                                <ListItem>
+                                    Content Management System or Custom Admin Panel
                                 </ListItem>
                             </List>
                         </CardContent>

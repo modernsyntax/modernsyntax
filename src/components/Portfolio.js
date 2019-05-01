@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
+import Style from '@material-ui/icons/Style';
+
 
 import Button from '@material-ui/core/Button';
 
@@ -38,6 +40,9 @@ const styles = theme => ({
     },
     media: {
         height: "200px"
+    },
+    icon: {
+        color: "#222"
     }
 })
 
@@ -47,9 +52,10 @@ const Portfolio = (props) => {
         <>
             <Grid container spacing={40} className={classes.root}>
                 <Grid item xs={12}>
-                    <Typography variant="h5" align="center" className={classes.headline}>
+                    {/* <Typography variant="h5" align="center" className={classes.headline}>
                         Companies We Designed
-                    </Typography>
+                    </Typography> */}
+                    <Style className={classes.icon} fontSize="large"/>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3} lg={2}>
                     <Card>
