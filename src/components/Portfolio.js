@@ -66,7 +66,6 @@ const styles = theme => ({
 
 const Portfolio = (props) => {
     const { classes } = props;
-    // const theme = useTheme();
     const sm = useMediaQuery('(min-width:600px)');
     return (
         <>
@@ -74,23 +73,19 @@ const Portfolio = (props) => {
                 <Grid item xs={12}>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3} lg={2}>
-                    {/* <Card className={classes.label}> */}
                     <Paper className={sm ? classes.label : classes.labelSmall}>
                         <Grid container alignItems="center" >
                         <Grid item xs={sm ? 4 : 0}>
                             &nbsp;
                         </Grid>
                             <Grid item xs={sm ? 8 : 12}>
-                    {/* <CardContent> */}
                                 <Style className={classes.icon} fontSize="large" />
                                 <Typography variant="h5" align="center" className={classes.headline}>
                                     What We Do
                                 </Typography>
-                    {/* </CardContent> */}
                             </Grid>
                         </Grid>
                         </Paper>
-                    {/* </Card> */}
                 </Grid>
                 <Grid item xs={12} sm={6} md={3} lg={2}>
                     <Card>
@@ -98,6 +93,7 @@ const Portfolio = (props) => {
                             className={classes.media}
                             image="/images/brownsales.jpg"
                             title="Brown Sales"
+                            alt="Brown Sales"
                         />
                         <CardActions>
                             <Grid container justify="space-between" alignItems="center">
@@ -116,6 +112,7 @@ const Portfolio = (props) => {
                             className={classes.media}
                             image="/images/gid-background.jpg"
                             title="Get It Done Management"
+                            alt="Get It Done Management"
                         />
                         <CardActions>
                             <Grid container justify="space-between" alignItems="center">
