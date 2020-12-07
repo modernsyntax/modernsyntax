@@ -110,16 +110,16 @@ const Portfolio = (props) => {
                     <Card>
                         <CardMedia
                             className={classes.media}
-                            image="/images/gid-background.jpg"
-                            title="Get It Done Management"
-                            alt="Get It Done Management"
+                            image="/images/pg-bg.png"
+                            title="Prevention Generation"
+                            alt="Prevention Generation"
                         />
                         <CardActions>
                             <Grid container justify="space-between" alignItems="center">
                                 <Grid item xs={8}>
-                                    <img alt="Get It Done Management" src="images/gid.png" className={classes.portImg} />
+                                    <img alt="Prevention Generation" src="images/pg-logo.png" className={classes.portImg} />
                                 </Grid>
-                                <Button href="https://gidmanagement.netlify.com/" target="_blank" className={classes.button}>Visit</Button>
+                                <Button href="https://preventiongeneration.com/" target="_blank" className={classes.button}>Visit</Button>
                             </Grid>
                         </CardActions>
                     </Card>
